@@ -28,7 +28,8 @@ class AuthService {
         return users
       }
     } catch(err){
-      throw new err;
+      console.log("Appwrite service :: createAccount :: error", err);
+      throw err;
     }
   }
  
@@ -38,7 +39,8 @@ class AuthService {
       return await this.account.createEmailPasswordSession(email, password);
 
     } catch(err){
-      throw new err
+      console.log("Appwrite service :: login :: error", err);
+      throw err;
     }
   }
 
