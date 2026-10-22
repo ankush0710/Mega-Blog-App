@@ -31,17 +31,31 @@ class AuthService {
       throw new err;
     }
   }
-
+ 
   // async method to call login if user is not exists
   async login({email, password}){
     try{
-      return await this.account.creatEmailSession(email, password);
+      return await this.account.createEmailPasswordSession(email, password);
 
     } catch(err){
       throw new err
     }
   }
+
+  // async func to check whether user is logged-in or not
+  async getCurrentUser(){
+  try {
+    return await this.account.get();
+    
+  } catch(err){
+    console.log("Appwrite service :: getCurrentUser :: error", err);
+  }
+  return null     // if there is problem in try catch or no user is present -> null
+
+  }
 }
+
+// async func for logout
 
 const authService = new AuthService;
 export default authService;
