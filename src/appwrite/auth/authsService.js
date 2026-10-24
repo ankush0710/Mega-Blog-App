@@ -12,7 +12,7 @@ class AuthService {
       .setEndpoint(config.appwriteUrl)
       .setProject(config.appwriteProjectId);
 
-    this.account = new Account.create(this.client);  
+    this.account = new Account(this.client);  
   }
 
   // async method to send the email, password and name to the appwrite
