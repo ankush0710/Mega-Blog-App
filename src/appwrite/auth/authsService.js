@@ -55,6 +55,15 @@ class AuthService {
   return null     // if there is problem in try catch or no user is present -> null
 
   }
+
+  // async func to check whether user is logged-in or not
+  async logout(){
+    try{
+      return await this.account.deleteSession({ sessionId: 'current' })
+    }catch(err){
+      console.log("Appwrite service :: logout :: error", err);
+    }
+  }
 }
 
 // async func for logout
