@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth/authsService";
 import { login, logout } from "./store/authSlice";
-import { Header, Footer } from "./components"
+import { Header, Footer } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -28,11 +28,11 @@ function App() {
         <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
           <div className="w-full block">
             <Header />
-            <Outlet/>
+            <Outlet />
             <Footer />
           </div>
         </div>
-            ) : (
+      ) : (
         <p className="text-center text-blue-700 text-lg">Loading...</p>
       )}
     </>
