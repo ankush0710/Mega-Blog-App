@@ -1,2 +1,5 @@
 export {default as Header} from './Header/Header'
 export {default as Footer} from './Footer/Footer'
+export {default as LogoutBtn} from './Button/LogoutBtn'
+export {default as Logo} from './Logo/Logo'
+export {default as Container} from './container/Container'
